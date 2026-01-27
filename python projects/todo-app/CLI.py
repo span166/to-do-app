@@ -23,7 +23,7 @@ projects
    functions from the module.
 '''
 
-import module_main5
+import todo_module
 
 '''
    Another way of importing module. module name needs to be written in the code below when calling get_todo and 
@@ -33,8 +33,8 @@ import module_main5
            time.sleep()
 '''
 
-import time                                   #importing time module.
-print( time.strftime("%b %d,%Y %H:%M:%S") )   #using the function inside the time module.
+import time                                   # importing time module. These are called standard module.
+print( time.strftime("%b %d,%Y %H:%M:%S") )   # using the function inside the time module.
 
 
 while True:
@@ -44,16 +44,16 @@ while True:
 
     if user_input.startswith("add"):  # startswith with to validate the command at the start of the input.
 
-        todos = module_main5.get_todo()  # Using functions to read the file. default arg value is already passed in fun.
+        todos = todo_module.get_todo()  # Using functions to read the file. default arg value is already passed in fun.
 
         todo = user_input[4:] + "\n"  # Using slicing method to extract the user input followed by command.
         todos.append(todo)
 
-        module_main5.write_todo("tododata.txt", todos)
+        todo_module.write_todo("tododata.txt", todos)
 
     elif user_input.startswith("show") or user_input.startswith("display"):
 
-        todos = module_main5.get_todo()  # Using custom functions to read the file.
+        todos = todo_module.get_todo()  # Using custom functions to read the file.
 
         for index, item in enumerate(todos):
             item = item.strip("\n")  # This is to strip the break line characters in the output.
@@ -64,12 +64,12 @@ while True:
             todo_edit = int(user_input[5:])
             todo_edit = todo_edit - 1
 
-            todos = module_main5.get_todo()  # Using custom functions to read the file.
+            todos = todo_module.get_todo()  # Using custom functions to read the file.
 
             print(f"\n You have requested to edit - {todos[todo_edit]}")
             todos[todo_edit] = input("\n Enter new todo: ") + '\n'
 
-            module_main5.write_todo("tododata.txt", todos)
+            todo_module.write_todo("tododata.txt", todos)
 
         except ValueError:  # This will be used to catch an error.
             print("You have entered an incorrect command!")
@@ -80,12 +80,12 @@ while True:
             index_del = int(user_input[6:])
             usr_del = index_del - 1
 
-            todos = module_main5.get_todo()  # Using custom functions to read the file.
+            todos = todo_module.get_todo()  # Using custom functions to read the file.
 
             todo_to_be_removed = todos[usr_del].strip('\n')
             todos.pop(usr_del)
 
-            module_main5.write_todo("tododata.txt", todos)
+            todo_module.write_todo("tododata.txt", todos)
 
             message = f"You have deleted {todo_to_be_removed} from the todo list"
             print(message)
