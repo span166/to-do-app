@@ -4,3 +4,11 @@ make baby
 take gf on a date
 take driving lessons
 make me a good sandwich
+editing the list in python gui
+this a second edit in the gui
+this is a third edit to the gui
+this is test of add
+this is test on add 2
+this is test of add 3
+this is test of add 4
+this is test of add 5

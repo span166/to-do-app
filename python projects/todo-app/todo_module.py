@@ -1,13 +1,14 @@
 # 1. This is a module which contains get_todo() and write_todo() functions.
+FILEPATH = "tododata.txt"
 
-def get_todo(filepath = "tododata.txt"):
+def get_todo(filepath = FILEPATH):
 
     with open(filepath, 'r') as file_local:  # file_local is a local variable outside the main code.
         todos_local = file_local.readlines()  # todos_local is a local variable outside the main code.
     return todos_local                        # returns when called by the function.
 
 
-def write_todo(filepath, todos_para):          # filepath and todos_para are parameter to the function.
+def write_todo(todos_para, filepath = FILEPATH):          # filepath and todos_para are parameter to the function.
     with open(filepath, 'w') as file_local:    # This function does not need return anything as it is doing something.
         file_local.writelines(todos_para)
 
