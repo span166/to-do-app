@@ -29,7 +29,7 @@ window = sg.Window("My To-do App",
                    layout=[[label, button],
                            [input_box],
                            [list_box, edit_button]],
-                   font=('text', 10))
+                   font=('Helvetica', 10))
 
 while True:
     event, value = window.read()              # read() returns a tuple. Assigning values multiple variables.
